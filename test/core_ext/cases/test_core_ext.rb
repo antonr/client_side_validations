@@ -44,6 +44,10 @@ class CoreExtTest < Test::Unit::TestCase
     assert_equal //i, //i.as_json
   end
 
+  def test_regexp_removes_extra_options
+    assert_equal //, //x.as_json
+  end
+
   def test_range_as_json
     assert_equal [1,3], (1..3).as_json
   end
