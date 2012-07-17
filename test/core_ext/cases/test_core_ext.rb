@@ -35,6 +35,11 @@ class CoreExtTest < Test::Unit::TestCase
     assert_equal "/(something)/", /(?-mix:something)/.to_json(nil)
   end
 
+  def test_regexp_remove_newlines
+    assert_equal "/something here/", /something
+ here/.to_json(nil)
+  end
+
   def test_regexp_as_jason_with_options
     assert_equal //i, //i.as_json
   end
